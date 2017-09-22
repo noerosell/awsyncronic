@@ -1,0 +1,36 @@
+{
+    "name": "noerosell/awsyncronic",
+    "description": "amphp/artax client handler for guzzle",
+    "keywords": [
+        "php",
+        "aws",
+        "amphp",
+        "guzzle",
+        "handler",
+        "parallel",
+        "async",
+        "non-blocking"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Noé Rosell",
+            "email": "nrosell@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload":{
+        "psr-4": {
+            "awsyncronic\\lib\\":"lib/"
+        }
+    },
+    "require": {
+        "amphp/amp": "v2.0.1",
+        "amphp/artax": "v3.0.4"
+    },
+    "require-dev": {
+        "amphp/phpunit-util": "v1.0.0",
+        "aws/aws-sdk-php": "^3"
+    }
+
+}
