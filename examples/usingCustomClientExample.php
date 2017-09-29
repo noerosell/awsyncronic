@@ -32,9 +32,9 @@ final class usingCustomClientExample
     {
         Loop::setErrorHandler(new LoopErrorHandler());
         Loop::run(function(){
+            $this->sqsQueue = new SqsCustomClient($this->awsSqsRegion, $this->awsSqsVersion, $this->awsSqsKey, $this->awsSecret);
             try {
                 Loop::repeat(0,function(){
-                $this->sqsQueue = new SqsCustomClient($this->awsSqsRegion, $this->awsSqsVersion, $this->awsSqsKey, $this->awsSecret);
                 $promise = $this->sqsQueue->getMessage($this->awsSqsurl);
                 $message = yield $promise;
                 print_r($message);
