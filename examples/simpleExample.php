@@ -13,7 +13,7 @@ use GuzzleHttp\HandlerStack;
  */
 $loader = require __DIR__ . '/../vendor/autoload.php';
 
-final class main
+final class simpleExample
 {
 
     private $awsSqsKey = '';
@@ -25,6 +25,7 @@ final class main
     private $awsSqsVersion = '';
 
     private $awsSqsurl = "";
+
 
     /** @var  \Aws\Sqs\SqsClient */
     private $sqsQueue;
@@ -67,4 +68,4 @@ final class main
     }
 }
 
-(new main())->run();
+(new simpleExample())->run();
