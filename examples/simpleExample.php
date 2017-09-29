@@ -13,18 +13,19 @@ use GuzzleHttp\HandlerStack;
  */
 $loader = require __DIR__ . '/../vendor/autoload.php';
 
-final class main
+final class simpleExample
 {
 
-    private $awsSqsKey = '';
+    private $awsSqsKey = 'AKIAIM72P5MPB43OIIXA';
 
-    private $awsSecret = '';
+    private $awsSecret = '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';
 
-    private $awsSqsRegion = '';
+    private $awsSqsRegion = 'us-east-1';
 
-    private $awsSqsVersion = '';
+    private $awsSqsVersion = '2012-11-05';
 
-    private $awsSqsurl = "";
+    private $awsSqsurl = "https://sqs.us-east-1.amazonaws.com/142601763968/dev-bouncer4proyection_domain_events";
+
 
     /** @var  \Aws\Sqs\SqsClient */
     private $sqsQueue;
@@ -67,4 +68,4 @@ final class main
     }
 }
 
-(new main())->run();
+(new simpleExample())->run();

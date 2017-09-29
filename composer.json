@@ -21,7 +21,8 @@
     "minimum-stability": "stable",
     "autoload":{
         "psr-4": {
-            "awsyncronic\\lib\\":"lib/"
+            "awsyncronic\\lib\\":"lib/",
+            "awsyncronic\\examples\\": "examples/"
         }
     },
     "require": {
