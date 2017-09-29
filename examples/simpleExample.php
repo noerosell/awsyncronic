@@ -16,15 +16,15 @@ $loader = require __DIR__ . '/../vendor/autoload.php';
 final class simpleExample
 {
 
-    private $awsSqsKey = 'AKIAIM72P5MPB43OIIXA';
+    private $awsSqsKey = '';
 
-    private $awsSecret = '6xwRC4yB92W56XCflFfOXVuppvDIHQNZZ0eBk+b6';
+    private $awsSecret = '';
 
-    private $awsSqsRegion = 'us-east-1';
+    private $awsSqsRegion = '';
 
-    private $awsSqsVersion = '2012-11-05';
+    private $awsSqsVersion = '';
 
-    private $awsSqsurl = "https://sqs.us-east-1.amazonaws.com/142601763968/dev-bouncer4proyection_domain_events";
+    private $awsSqsurl = "";
 
 
     /** @var  \Aws\Sqs\SqsClient */
