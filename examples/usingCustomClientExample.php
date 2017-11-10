@@ -48,4 +48,4 @@ final class usingCustomClientExample
 
 }
 
-(new main())->run();
+(new usingCustomClientExample())->run();
