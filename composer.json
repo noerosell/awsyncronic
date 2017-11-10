@@ -27,7 +27,7 @@
         }
     },
     "require": {
-        "amphp/amp": "v2.0.1",
+        "amphp/amp": "^2.0",
         "amphp/artax": "v3.0.4"
     },
     "require-dev": {
