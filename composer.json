@@ -28,11 +28,10 @@
     },
     "require": {
         "amphp/amp": "^2.0",
-        "amphp/artax": "v3.0.4"
+        "amphp/artax": "^3.0.4"
     },
     "require-dev": {
         "amphp/phpunit-util": "v1.0.0",
         "aws/aws-sdk-php": "^3"
     }
-
 }
