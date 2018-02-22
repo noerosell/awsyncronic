@@ -41,17 +41,20 @@ final class AwsHttpHandler
         $internalRequest = $internalRequest->withBody($request->getBody()->getContents());
 
         Loop::defer(function () use ($internalRequest, $options, $guzzlePromise) {
+            try {
+                $promise = $this->client->request($internalRequest, $options);
+                /** @var \Amp\Artax\Response $response */
+                $response = yield $promise;
+                $body     = yield $response->getBody();
 
-            $promise = $this->client->request($internalRequest, $options);
-            /** @var \Amp\Artax\Response $response */
-            $response = yield $promise;
-            $body = yield $response->getBody();
-
-            $guzzleResponse = new Response($response->getStatus(), $response->getHeaders(), $body);
-            if ($response->getStatus() !== HTTP_OK) {
-                $guzzlePromise->reject($response->getReason());
-            } else {
-                $guzzlePromise->resolve($guzzleResponse);
+                $guzzleResponse = new Response($response->getStatus(), $response->getHeaders(), $body);
+                if ($response->getStatus() !== HTTP_OK) {
+                    $guzzlePromise->reject($response->getReason());
+                } else {
+                    $guzzlePromise->resolve($guzzleResponse);
+                }
+            } catch (\Exception $e) {
+                $guzzlePromise->reject($e);
             }
         });
 
