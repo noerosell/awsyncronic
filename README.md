@@ -1,5 +1,5 @@
 # awsyncronic
-Awsyncronic is set of utils, an http handler and a Middleware step for guzzle, which makes possible a no-blocking i/o 
+Awsyncronic is a set of utils, an http handler and a Middleware step for guzzle, which makes possible a no-blocking i/o 
 comunication. Built on top of amphp/amp project which is who makes the magic. amphp/artax is the http client what 
 asyncronic use to make request. Awsyncronic coordinates the amp Loop with the Guzzle internal queue
 (which has a reactPhp Loop inside of it).
